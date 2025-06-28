@@ -1,12 +1,17 @@
 # ===================================================================
-# Python Template .gitignore
+#         Comprehensive Python .gitignore
 #
-# A comprehensive gitignore for Python projects, including sections
-# for Node.js and TensorFlow/ML as requested.
+# Covers general Python artifacts, virtual environments, IDE files,
+# secrets, and specific libraries like Node.js and TensorFlow/ML.
+#
+# This version is updated to specifically prevent committing the
+# 'venv' folder and '*.pyd' files, which caused your error.
 # ===================================================================
 
 # 1. Byte-compiled / optimized / C extensions
 # -------------------------------------------------------------------
+# This section prevents compiled files, including the problematic
+# `_pywrap_tensorflow_internal.pyd` file, from being tracked.
 __pycache__/
 *.pyc
 *.pyo
@@ -15,8 +20,9 @@ __pycache__/
 
 # 2. Virtual Environments
 # -------------------------------------------------------------------
-# Keep your virtual environment out of git. Instead, commit a
-# `requirements.txt` or `pyproject.toml` file.
+# This is the most important section for fixing your issue.
+# It ensures your virtual environment folder (`venv`) is ignored.
+# Always commit a `requirements.txt` or `pyproject.toml` instead.
 venv/
 .venv/
 env/
@@ -54,6 +60,7 @@ MANIFEST
 !*.env.example
 !*.env.template
 secrets.ini
+credentials.json
 *.pem
 *.key
 
@@ -63,11 +70,19 @@ secrets.ini
 .idea/          # PyCharm
 .vscode/        # VSCode
 *.sublime-*     # Sublime Text
+nbproject/      # Netbeans
+.project        # Eclipse
+
+
+# 6. System & Temporary files
+# -------------------------------------------------------------------
 .DS_Store       # MacOS
 Thumbs.db       # Windows
+ehthumbs.db     # Windows
+desktop.ini     # Windows
 
 
-# 6. Testing & Coverage Reports
+# 7. Testing & Coverage Reports
 # -------------------------------------------------------------------
 .pytest_cache/
 .tox/
@@ -77,50 +92,56 @@ Thumbs.db       # Windows
 htmlcov/
 nosetests.xml
 coverage.xml
+*.prof
 
 
-# 7. Jupyter Notebook
+# 8. Jupyter Notebook
 # -------------------------------------------------------------------
 .ipynb_checkpoints
 
 
-# 8. Logs and Databases
+# 9. Logs and Databases
 # -------------------------------------------------------------------
 *.log
 *.db
 *.sqlite3
+*.sql
 
 
 # ===================================================================
-# YOUR SPECIFIC REQUESTS
+# SECTION FOR YOUR SPECIFIC REQUESTS
 # ===================================================================
 
-# 9. Node.js dependencies
+# 10. Node.js dependencies
 # -------------------------------------------------------------------
 # As requested, ignore Node.js modules.
 node_modules/
 npm-debug.log
-# It is usually a good practice to commit lockfiles, but uncomment
-# these if your project's workflow requires ignoring them.
+# It is usually a good practice to commit lockfiles, but you can
+# uncomment these lines if your project's workflow requires it.
 # package-lock.json
 # yarn.lock
 
 
-# 10. TensorFlow / Machine Learning
+# 11. TensorFlow / Machine Learning Artifacts
 # -------------------------------------------------------------------
 # As requested, ignore TensorFlow and general ML artifacts.
 # This includes saved models, datasets, and logs.
 #
-# Saved models
+# Saved models and checkpoints
 saved_model/
+checkpoints/
 *.h5
 *.keras
+*.pt
+*.pth
+*.onnx
 
 # TensorBoard logs
 logs/
 runs/
 
-# Large data files (uncomment and adapt as needed)
+# Large data files (uncomment and adapt for your project)
 # *.csv
 # *.pkl
 # *.parquet
