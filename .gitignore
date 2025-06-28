@@ -1,0 +1,50 @@
+# ===================================================================
+# General
+# ===================================================================
+
+# Log files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# IDE/Editor specific configuration
+.vscode/
+.idea/
+
+# ===================================================================
+# Node.js / JavaScript (for root, /server, and /client)
+# ===================================================================
+
+# This single line will ignore all node_modules folders in any directory
+node_modules/
+
+# Environment variables file - DO NOT COMMIT THIS! It contains secrets.
+.env
+/server/.env
+
+# Build output
+/build
+/dist
+
+# ===================================================================
+# Python (for /ai_model_service)
+# ===================================================================
+
+# Virtual Environment folder - DO NOT COMMIT THIS! It's very large.
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Generated AI model and scaler files
+# Best practice is to have collaborators run train.py themselves
+risk_model.h5
+scaler.npy
