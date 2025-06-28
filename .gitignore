@@ -8,18 +8,60 @@ npm-debug.log
 *.log
 
 # Python
-/ai_model_service/venv
-_pycache_/
-*.pyc
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.Python
+
+# Virtual Environments (multiple patterns to catch all cases)
+venv/
+env/
+ENV/
+.venv/
+.env/
+*/venv/
+*/env/
+*/.venv/
+*/.env/
+ai_model_service/venv/
+ai_model_service/env/
 
 # AI Model & Scaler (These are generated files)
 /ai_model_service/risk_model.h5
 /ai_model_service/scaler.npy
 
+# Large ML/AI library files (common culprits)
+*.pyd
+*.dll
+*.so.*
+*.dylib
+
 # IDE/Editor specific
 .vscode/
 .idea/
+*.swp
+*.swo
+*~
 
 # OS-specific
 .DS_Store
 Thumbs.db
+*.tmp
+*.temp
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pytest
+.pytest_cache/
+.coverage
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
