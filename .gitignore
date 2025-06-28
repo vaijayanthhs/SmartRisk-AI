@@ -1,50 +1,127 @@
 # ===================================================================
-# General
+# Python Template .gitignore
+#
+# A comprehensive gitignore for Python projects, including sections
+# for Node.js and TensorFlow/ML as requested.
 # ===================================================================
 
-# Log files
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# OS-generated files
-.DS_Store
-Thumbs.db
-
-# IDE/Editor specific configuration
-.vscode/
-.idea/
-
-# ===================================================================
-# Node.js / JavaScript (for root, /server, and /client)
-# ===================================================================
-
-# This single line will ignore all node_modules folders in any directory
-node_modules/
-
-# Environment variables file - DO NOT COMMIT THIS! It contains secrets.
-.env
-/server/.env
-
-# Build output
-/build
-/dist
-
-# ===================================================================
-# Python (for /ai_model_service)
-# ===================================================================
-
-# Virtual Environment folder - DO NOT COMMIT THIS! It's very large.
-venv/
-
-# Python cache
+# 1. Byte-compiled / optimized / C extensions
+# -------------------------------------------------------------------
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
 
-# Generated AI model and scaler files
-# Best practice is to have collaborators run train.py themselves
-risk_model.h5
-scaler.npy
+
+# 2. Virtual Environments
+# -------------------------------------------------------------------
+# Keep your virtual environment out of git. Instead, commit a
+# `requirements.txt` or `pyproject.toml` file.
+venv/
+.venv/
+env/
+.env/
+ENV/
+env.bak/
+venv.bak/
+
+
+# 3. Distribution / Packaging
+# -------------------------------------------------------------------
+build/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+
+# 4. Secrets and Environment Variables
+# -------------------------------------------------------------------
+# NEVER commit secrets, API keys, or credentials.
+# Use environment variables or a secrets manager instead.
+.env
+.env.*
+!*.env.example
+!*.env.template
+secrets.ini
+*.pem
+*.key
+
+
+# 5. IDE / Editor configuration files
+# -------------------------------------------------------------------
+.idea/          # PyCharm
+.vscode/        # VSCode
+*.sublime-*     # Sublime Text
+.DS_Store       # MacOS
+Thumbs.db       # Windows
+
+
+# 6. Testing & Coverage Reports
+# -------------------------------------------------------------------
+.pytest_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+nosetests.xml
+coverage.xml
+
+
+# 7. Jupyter Notebook
+# -------------------------------------------------------------------
+.ipynb_checkpoints
+
+
+# 8. Logs and Databases
+# -------------------------------------------------------------------
+*.log
+*.db
+*.sqlite3
+
+
+# ===================================================================
+# YOUR SPECIFIC REQUESTS
+# ===================================================================
+
+# 9. Node.js dependencies
+# -------------------------------------------------------------------
+# As requested, ignore Node.js modules.
+node_modules/
+npm-debug.log
+# It is usually a good practice to commit lockfiles, but uncomment
+# these if your project's workflow requires ignoring them.
+# package-lock.json
+# yarn.lock
+
+
+# 10. TensorFlow / Machine Learning
+# -------------------------------------------------------------------
+# As requested, ignore TensorFlow and general ML artifacts.
+# This includes saved models, datasets, and logs.
+#
+# Saved models
+saved_model/
+*.h5
+*.keras
+
+# TensorBoard logs
+logs/
+runs/
+
+# Large data files (uncomment and adapt as needed)
+# *.csv
+# *.pkl
+# *.parquet
+# data/
