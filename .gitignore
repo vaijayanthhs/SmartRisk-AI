@@ -1,148 +1,25 @@
-# ===================================================================
-#         Comprehensive Python .gitignore
-#
-# Covers general Python artifacts, virtual environments, IDE files,
-# secrets, and specific libraries like Node.js and TensorFlow/ML.
-#
-# This version is updated to specifically prevent committing the
-# 'venv' folder and '*.pyd' files, which caused your error.
-# ===================================================================
-
-# 1. Byte-compiled / optimized / C extensions
-# -------------------------------------------------------------------
-# This section prevents compiled files, including the problematic
-# `_pywrap_tensorflow_internal.pyd` file, from being tracked.
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-
-
-# 2. Virtual Environments
-# -------------------------------------------------------------------
-# This is the most important section for fixing your issue.
-# It ensures your virtual environment folder (`venv`) is ignored.
-# Always commit a `requirements.txt` or `pyproject.toml` instead.
-venv/
-.venv/
-env/
-.env/
-ENV/
-env.bak/
-venv.bak/
-
-
-# 3. Distribution / Packaging
-# -------------------------------------------------------------------
-build/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
-
-
-# 4. Secrets and Environment Variables
-# -------------------------------------------------------------------
-# NEVER commit secrets, API keys, or credentials.
-# Use environment variables or a secrets manager instead.
+# Node.js
+/node_modules
+/client/node_modules
+/server/node_modules
 .env
-.env.*
-!*.env.example
-!*.env.template
-secrets.ini
-credentials.json
-*.pem
-*.key
-
-
-# 5. IDE / Editor configuration files
-# -------------------------------------------------------------------
-.idea/          # PyCharm
-.vscode/        # VSCode
-*.sublime-*     # Sublime Text
-nbproject/      # Netbeans
-.project        # Eclipse
-
-
-# 6. System & Temporary files
-# -------------------------------------------------------------------
-.DS_Store       # MacOS
-Thumbs.db       # Windows
-ehthumbs.db     # Windows
-desktop.ini     # Windows
-
-
-# 7. Testing & Coverage Reports
-# -------------------------------------------------------------------
-.pytest_cache/
-.tox/
-.nox/
-.coverage
-.coverage.*
-htmlcov/
-nosetests.xml
-coverage.xml
-*.prof
-
-
-# 8. Jupyter Notebook
-# -------------------------------------------------------------------
-.ipynb_checkpoints
-
-
-# 9. Logs and Databases
-# -------------------------------------------------------------------
-*.log
-*.db
-*.sqlite3
-*.sql
-
-
-# ===================================================================
-# SECTION FOR YOUR SPECIFIC REQUESTS
-# ===================================================================
-
-# 10. Node.js dependencies
-# -------------------------------------------------------------------
-# As requested, ignore Node.js modules.
-node_modules
+/server/.env
 npm-debug.log
-# It is usually a good practice to commit lockfiles, but you can
-# uncomment these lines if your project's workflow requires it.
-# package-lock.json
-# yarn.lock
+*.log
 
+# Python
+/ai_model_service/venv
+_pycache_/
+*.pyc
 
-# 11. TensorFlow / Machine Learning Artifacts
-# -------------------------------------------------------------------
-# As requested, ignore TensorFlow and general ML artifacts.
-# This includes saved models, datasets, and logs.
-#
-# Saved models and checkpoints
-saved_model/
-checkpoints/
-*.h5
-*.keras
-*.pt
-*.pth
-*.onnx
+# AI Model & Scaler (These are generated files)
+/ai_model_service/risk_model.h5
+/ai_model_service/scaler.npy
 
-# TensorBoard logs
-logs/
-runs/
+# IDE/Editor specific
+.vscode/
+.idea/
 
-# Large data files (uncomment and adapt for your project)
-# *.csv
-# *.pkl
-# *.parquet
-# data/
+# OS-specific
+.DS_Store
+Thumbs.db
