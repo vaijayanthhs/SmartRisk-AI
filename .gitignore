@@ -115,7 +115,7 @@ coverage.xml
 # 10. Node.js dependencies
 # -------------------------------------------------------------------
 # As requested, ignore Node.js modules.
-node_modules/
+node_modules
 npm-debug.log
 # It is usually a good practice to commit lockfiles, but you can
 # uncomment these lines if your project's workflow requires it.
